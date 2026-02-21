@@ -1,0 +1,8 @@
+{
+  "name": "Zoomer’s Lit Lab",
+  "description": "A futuristic, bite-sized educational portal featuring study hacks, curated conceptual videos, PDF resources, and an AI study buddy. Designed with a Cyberpunk aesthetic for the modern learner.",
+  "requestFramePermissions": [
+    "microphone",
+    "camera"
+  ]
+}
