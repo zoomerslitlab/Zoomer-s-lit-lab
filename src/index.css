@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Inter:wght@300;400;600&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+    :root {
+        --neon-cyan: #00f3ff;
+        --neon-magenta: #bc13fe;
+        --dark-bg: #050505;
+        --card-bg: rgba(15, 15, 20, 0.85);
+        --glow-opacity: 0.1;
+        --blur-intensity: 160px;
+    }
+
+    .stealth-mode {
+        --neon-cyan: #0088cc;
+        --neon-magenta: #7b2cbf;
+        --dark-bg: #000000;
+        --card-bg: rgba(5, 5, 5, 0.95);
+        --glow-opacity: 0.04;
+        --blur-intensity: 100px;
+    }
+
+    body {
+        font-family: 'Inter', sans-serif;
+        background-color: var(--dark-bg);
+        color: #e0e0e0;
+        transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+}
+
+@layer components {
+    .font-orbitron {
+        font-family: 'Orbitron', sans-serif;
+    }
+
+    .cyber-card {
+        background: var(--card-bg);
+        border: 1px solid rgba(0, 243, 255, 0.15);
+        box-shadow: 0 0 15px rgba(0, 243, 255, 0.03);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .stealth-mode .cyber-card {
+        border-color: rgba(0, 136, 204, 0.1);
+    }
+
+    .cyber-card:hover {
+        border-color: var(--neon-cyan);
+        box-shadow: 0 0 25px rgba(0, 243, 255, 0.15), 0 0 10px rgba(188, 19, 254, 0.1);
+        transform: translateY(-4px);
+    }
+
+    .neon-text-blue {
+        color: var(--neon-cyan);
+        text-shadow: 0 0 10px var(--neon-cyan), 0 0 20px rgba(0, 243, 255, 0.4);
+    }
+
+    .neon-text-gradient {
+        background: linear-gradient(to right, var(--neon-cyan), var(--neon-magenta));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        filter: drop-shadow(0 0 5px rgba(0, 243, 255, 0.3));
+    }
+
+    .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+    }
+
+    .glow-button {
+        box-shadow: 0 0 15px rgba(0, 243, 255, 0.2);
+        transition: all 0.3s ease;
+    }
+
+    .glow-button:hover {
+        box-shadow: 0 0 25px rgba(188, 19, 254, 0.4);
+        background: linear-gradient(to right, var(--neon-cyan), var(--neon-magenta));
+    }
+
+    .theme-transition {
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+}
